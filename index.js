@@ -3,7 +3,7 @@ const fs = require("fs");
 const app = express();
 const port = 3000;
 
-fs.mkdirSync("./aron");
+// fs.mkdirSync("./aron");
 
 app.get("/", (req, res) => res.send("Hello World!"));
 
