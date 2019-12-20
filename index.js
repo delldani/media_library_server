@@ -26,8 +26,8 @@ function multerMaker(path) {
 app.get("/", (req, res) => res.send("response Ok !"));
 
 app.post("/", multerMaker("dani/").single("avatar"), (req, res) => {
-  // console.log(req.files);
-  // console.log(req.body);
+  console.log(req.file);
+  console.log(req.body);
   res.send("mentve!");
 });
 
