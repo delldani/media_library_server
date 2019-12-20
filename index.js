@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 const cors = require("cors");
 var multer = require("multer");
 
@@ -24,19 +23,16 @@ function multerMaker(path) {
   return multer({ storage: storage });
 }
 
-let upload = multerMaker("dani/");
-let uploadPictures = multerMaker("pictures/");
-
 app.get("/", (req, res) => res.send("response Ok !"));
 
-app.post("/", upload.single("avatar"), (req, res) => {
+app.post("/", multerMaker("dani/").single("avatar"), (req, res) => {
   // console.log(req.files);
   // console.log(req.body);
   res.send("mentve!");
 });
 
-app.post("/pictures", uploadPictures.array("avatar"), (req, res) => {
-  console.log(req.files);
+app.post("/pictures", multerMaker("pictures/").array("avatar"), (req, res) => {
+  // console.log(req.files);
   // console.log(req.body);
   res.send("mentve képek!");
 });
