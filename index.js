@@ -17,7 +17,7 @@ function multerMaker(path) {
       cb(null, path);
     },
     filename: function(req, file, cb) {
-      cb(null, "kép" + "-" + Date.now() + ".jpg");
+      cb(null, "kep" + "-" + Date.now() + ".jpg");
     }
   });
   return multer({ storage: storage });
