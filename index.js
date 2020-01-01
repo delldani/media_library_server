@@ -32,8 +32,9 @@ app.post("/", multerMaker("dani/").single("avatar"), (req, res) => {
 });
 
 app.post("/pictures", multerMaker("pictures/").array("avatar"), (req, res) => {
-  // console.log(req.files);
-  // console.log(req.body);
+  console.log(req.files);
+  console.log(req.body);
+  console.log(req.files.length);
   res.send("mentve képek!");
 });
 
