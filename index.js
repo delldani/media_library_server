@@ -6,10 +6,11 @@ const app = express();
 const port = 3000;
 
 let corsOptions = {
-  origin: "http://localhost:3001",
+  origin: "http://localhost:3002",
   optionsSuccessStatus: 200
 };
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors()); //bármelyik címről engedi
 
 function multerMaker(path) {
   let storage = multer.diskStorage({
